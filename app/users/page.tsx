@@ -186,7 +186,7 @@ export default function AdminUsersPage() {
                       users.map((user) => (
                         <TableRow key={user.clerk_user_id}>
                           <TableCell className="font-mono text-xs">
-                            {user.clerk_user_id.substring(0, 20)}...
+                            {user.clerk_user_id ? String(user.clerk_user_id).substring(0, 20) + '...' : '-'}
                           </TableCell>
                           <TableCell>{user.email}</TableCell>
                           <TableCell>

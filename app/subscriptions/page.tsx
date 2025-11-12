@@ -218,14 +218,14 @@ export default function AdminSubscriptionsPage() {
                         <TableRow key={sub.id}>
                           <TableCell>
                             <div>
-                              <div className="font-medium">{sub.plan_name}</div>
+                              <div className="font-medium">{sub.plan_name || '-'}</div>
                               {sub.plan_key && (
                                 <div className="text-xs text-muted-foreground">{sub.plan_key}</div>
                               )}
                             </div>
                           </TableCell>
                           <TableCell>
-                            {sub.users?.email || sub.user_id.substring(0, 20) + '...'}
+                            {sub.users?.email || (sub.user_id ? String(sub.user_id).substring(0, 20) + '...' : '-')}
                           </TableCell>
                           <TableCell>
                             {sub.organizations?.name || '-'}
@@ -235,7 +235,7 @@ export default function AdminSubscriptionsPage() {
                           </TableCell>
                           <TableCell>
                             {sub.amount_cents
-                              ? `${(sub.amount_cents / 100).toFixed(2)} ${sub.currency}`
+                              ? `${(sub.amount_cents / 100).toFixed(2)} ${sub.currency || 'USD'}`
                               : '-'}
                           </TableCell>
                           <TableCell>
