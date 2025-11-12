@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { UserButton } from '@clerk/nextjs';
@@ -30,7 +30,13 @@ const navigation = [
 
 export function AdminLayout({ children }: AdminLayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const pathname = usePathname();
+
+  // Prevent hydration mismatch
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -120,7 +126,7 @@ export function AdminLayout({ children }: AdminLayoutProps) {
           </Button>
           <div className="flex-1">
             <h2 className="text-lg font-semibold text-gray-900">
-              {navigation.find((item) => item.href === pathname)?.name || 'Admin Panel'}
+              {mounted ? (navigation.find((item) => item.href === pathname)?.name || 'Admin Panel') : 'Admin Panel'}
             </h2>
           </div>
         </header>
