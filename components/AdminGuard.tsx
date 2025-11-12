@@ -33,12 +33,12 @@ export function AdminGuard({ children }: AdminGuardProps) {
           setIsAdmin(true);
         } else {
           setIsAdmin(false);
-          router.push('/dashboard');
+          router.push('/unauthorized');
         }
       })
       .catch(() => {
         setIsAdmin(false);
-        router.push('/dashboard');
+        router.push('/unauthorized');
       });
   }, [userId, isLoaded, router]);
 

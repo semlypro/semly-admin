@@ -13,7 +13,7 @@ export default function AdminDashboardPage() {
         </div>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          <Link href="/admin/users">
+          <Link href="/users">
             <Card className="hover:shadow-lg transition-shadow cursor-pointer">
               <CardHeader>
                 <div className="flex items-center justify-between">
@@ -29,7 +29,7 @@ export default function AdminDashboardPage() {
             </Card>
           </Link>
 
-          <Link href="/admin/subscriptions">
+          <Link href="/subscriptions">
             <Card className="hover:shadow-lg transition-shadow cursor-pointer">
               <CardHeader>
                 <div className="flex items-center justify-between">
@@ -45,7 +45,7 @@ export default function AdminDashboardPage() {
             </Card>
           </Link>
 
-          <Link href="/admin/projects">
+          <Link href="/projects">
             <Card className="hover:shadow-lg transition-shadow cursor-pointer">
               <CardHeader>
                 <div className="flex items-center justify-between">
@@ -61,7 +61,7 @@ export default function AdminDashboardPage() {
             </Card>
           </Link>
 
-          <Link href="/admin/prompts">
+          <Link href="/prompts">
             <Card className="hover:shadow-lg transition-shadow cursor-pointer">
               <CardHeader>
                 <div className="flex items-center justify-between">
