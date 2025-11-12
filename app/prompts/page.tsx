@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { AdminGuard } from '@/components/AdminGuard';
+import { AdminPageWrapper } from '@/components/AdminPageWrapper';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -219,7 +219,7 @@ export default function AdminPromptsPage() {
   };
 
   return (
-    <AdminGuard>
+    <AdminPageWrapper>
       <div className="container mx-auto py-8 px-4">
         <div className="mb-8 flex items-center justify-between">
           <div>
@@ -502,7 +502,7 @@ export default function AdminPromptsPage() {
           </DialogContent>
         </Dialog>
       </div>
-    </AdminGuard>
+    </AdminPageWrapper>
   );
 }
 

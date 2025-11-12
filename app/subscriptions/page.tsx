@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { AdminGuard } from '@/components/AdminGuard';
+import { AdminPageWrapper } from '@/components/AdminPageWrapper';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -157,14 +157,8 @@ export default function AdminSubscriptionsPage() {
   };
 
   return (
-    <AdminGuard>
-      <div className="container mx-auto py-8 px-4">
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold">Subscriptions Management</h1>
-          <p className="text-muted-foreground mt-2">Manage user subscriptions</p>
-        </div>
-
-        <Card>
+    <AdminPageWrapper>
+      <Card>
           <CardHeader>
             <div className="flex items-center justify-between">
               <div>
@@ -356,8 +350,7 @@ export default function AdminSubscriptionsPage() {
             </DialogFooter>
           </DialogContent>
         </Dialog>
-      </div>
-    </AdminGuard>
+    </AdminPageWrapper>
   );
 }
 

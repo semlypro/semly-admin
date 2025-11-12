@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { AdminGuard } from '@/components/AdminGuard';
+import { AdminPageWrapper } from '@/components/AdminPageWrapper';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -131,7 +131,7 @@ export default function AdminUsersPage() {
   };
 
   return (
-    <AdminGuard>
+    <AdminPageWrapper>
       <div className="container mx-auto py-8 px-4">
         <div className="mb-8">
           <h1 className="text-3xl font-bold">Users Management</h1>
@@ -302,7 +302,7 @@ export default function AdminUsersPage() {
           </DialogContent>
         </Dialog>
       </div>
-    </AdminGuard>
+    </AdminPageWrapper>
   );
 }
 
