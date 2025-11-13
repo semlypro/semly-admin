@@ -2,6 +2,7 @@
 
 import { AdminGuard } from './AdminGuard';
 import { AdminLayout } from './AdminLayout';
+import { ErrorBoundary } from './ErrorBoundary';
 
 interface AdminPageWrapperProps {
   children: React.ReactNode;
@@ -9,8 +10,10 @@ interface AdminPageWrapperProps {
 
 export function AdminPageWrapper({ children }: AdminPageWrapperProps) {
   return (
-    <AdminGuard>
-      <AdminLayout>{children}</AdminLayout>
-    </AdminGuard>
+    <ErrorBoundary>
+      <AdminGuard>
+        <AdminLayout>{children}</AdminLayout>
+      </AdminGuard>
+    </ErrorBoundary>
   );
 }

@@ -96,13 +96,15 @@ export function AdminLayout({ children }: AdminLayoutProps) {
           {/* Footer */}
           <div className="border-t p-4">
             <div className="flex items-center gap-3">
-              <UserButton
-                appearance={{
-                  elements: {
-                    avatarBox: 'h-10 w-10',
-                  },
-                }}
-              />
+              {mounted && (
+                <UserButton
+                  appearance={{
+                    elements: {
+                      avatarBox: 'h-10 w-10',
+                    },
+                  }}
+                />
+              )}
               <div className="flex-1 min-w-0">
                 <p className="text-sm font-medium text-gray-900">Admin</p>
                 <p className="text-xs text-gray-500 truncate">Administrator</p>
